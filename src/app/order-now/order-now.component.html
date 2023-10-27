@@ -1,0 +1,220 @@
+<div class="container-fluid p-0">
+    <app-header></app-header>
+    <app-menu  routerLinkActive></app-menu>
+    <div class="col-12">
+        <img src="../../assets/images/slider-img-01.png" class="w-100"/>
+    </div>
+    <section>
+        <div class="col-12 my-30">
+            <div class="row">
+                <div class="col-4 text-center">
+                    <h5 class="text-center">
+                        <span><strong>Total Products : </strong></span>
+                        <span><strong>0</strong></span>
+                    </h5>
+                </div>
+                <div class="col-4 text-center">
+                    <h5 class="text-center">
+                        <span><strong>Discounts: </strong></span>
+                        <span><strong>50%</strong></span>
+                    </h5>
+                </div>
+                <div class="col-4 text-center">
+                    <h5 class="text-center">
+                        <span><strong>Net Total: </strong></span>
+                        <span><strong>₹ 0</strong></span>
+                    </h5>
+                </div>
+            </div>
+            <div class="container p-0 my-4">
+                <div class="row">
+                    <div class="col-2 text-center">
+                        <h5 class="text-center">
+                            <strong>Code</strong>
+                        </h5>
+                    </div>
+                    <div class="col-2 text-center">
+                        <h5 class="text-center">
+                            <strong>Image</strong>
+                        </h5>
+                    </div>
+                    <div class="col-2 text-center">
+                        <h5 class="text-center">
+                            <strong>Product Name</strong>
+                        </h5>
+                    </div>
+                    <div class="col-2 text-center">
+                        <h5 class="text-center">
+                            <strong>Price</strong>
+                        </h5>
+                    </div>
+                    <div class="col-2 text-center">
+                        <h5 class="text-center">
+                            <strong>Quantity</strong>
+                        </h5>
+                    </div>
+                    <div class="col-2 text-center">
+                        <h5 class="text-center">
+                            <strong>Total</strong>
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="accordion" id="accordionContainer">
+                        <div class="accordion-item" *ngFor="let category of categoryList; let i = index">
+                          <h2 class="accordion-header" [id]="'heading' + i">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + i" aria-expanded="false" [attr.aria-controls]="'collapse' + i">
+                             {{ category.categoryName }}
+                            </button>
+                          </h2>
+                          <div [id]="'collapse' + i" class="accordion-collapse collapse" [attr.aria-labelledby]="'heading' + i"
+                            data-bs-parent="#accordionContainer">
+                            <div class="accordion-body">
+                                <div  *ngFor="let childCategory of categoryList[i].productsList; let first=first; let last=last;">
+                                    <div class="row py-4 align-items-center accordianDiv border-bottom"
+                                    [ngClass]="{ 'border-bottom-none': last }">
+                                        <div class="col-2 text-center">
+                                            <h5 class="text-center">
+                                                <strong>{{childCategory.SLNo}}</strong>
+                                            </h5>
+                                        </div>
+                                        <div class="col-2 text-center">
+                                            <!-- <h5 class="text-center">
+                                                <strong>{{products.image}}</strong>
+                                            </h5> -->
+                                            <img src="{{childCategory.image}}" class="w-50"/>
+                                        </div>
+                                        <div class="col-2 p-0">
+                                            <h5 class="text-center product-name">
+                                                <strong>{{childCategory.name}}</strong>
+                                            </h5>
+                                        </div>
+                                        <div class="col-2 text-center">
+                                            <h5 class="text-center product-name">
+                                                <strong>
+                                                    <del>{{childCategory.strikedAmout}}</del>
+                                                </strong>
+                                            </h5>
+                                            <h5 class="text-center price">
+                                                <strong>₹ {{childCategory.price}}</strong>
+                                            </h5>
+                                            <h5 class="text-center price">
+                                                <strong>₹ {{childCategory.categoryName}}</strong>
+                                            </h5>
+                                            <h5 class="text-center price">
+                                                <strong>₹ {{childCategory.id}}</strong>
+                                            </h5>
+                                        </div>
+                                        <div class="col-2">
+                                            <!-- <h5 class="text-center">
+                                                <strong>Quantity</strong>
+                                            </h5> -->
+                                            <div class="btn-group border border-dark" role="group" aria-label="Basic example">
+                                                <button type="button" class="btn border-right btn-decrement" (click)="decremnt(childCategory)">-</button>
+                                                <button type="button" class="btn border-right btn-width">{{quantity}}</button>
+                                                <button type="button" class="btn btn-increment" (click)="increment(childCategory)">+</button>
+                                                
+                                              </div>
+                                        </div>
+                                        <div class="col-2 text-center">
+                                            <h5 class="text-center product-name">
+                                                <strong>₹ {{totalAmount}}</strong>
+                                            </h5>
+                                        </div>                            
+                                    </div> 
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-12 my-4 text-center">
+                    <button onclick="openDialog()" type="button" class="btn-order-preview">Preview Order
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="row">
+            <div class="col-12 bg-gray-100 mb-50">
+                <div class="text-center">
+                    <h1 class="text-2xl text-center font-bold pt-2 pb-2 lg:pt-2 text-custom-blue">Bank Details </h1>
+                    <div class="smallborder1 mx-auto"></div>
+                </div>
+                <div class="row my-50 d-flex justify-content-between">
+                    <div class="col-5">
+                        <div class="bg-gray-200 rounded-lg px-10 py-4">
+                            <p class="leading-relaxed pb-3 mb-0 text-xl text-custom-blue">
+                                <span class="capitalize text-blue-900">Name :-</span>
+                                JEGAJOTHI TRADERS
+                            </p>
+                            <p class="leading-relaxed pb-3 mb-0 text-xl text-custom-blue">
+                                <span class="capitalize text-blue-900">bank name :- </span> Indian overseas bank
+                            </p>
+                            <p class="leading-relaxed pb-3 mb-0 text-xl text-custom-blue">
+                                <span class="capitalize text-blue-900">acc no :- </span> 074702000000366
+                            </p>
+                            <p class="leading-relaxed pb-3 mb-0 text-xl text-custom-blue">
+                                <span class="capitalize text-blue-900">bank branch :- </span> VEMBAKOTTAI 
+                            </p>
+                            <p class="uppercase leading-relaxed pb-3 mb-0 text-xl text-custom-blue">
+                                <span class="capitalize text-blue-900">IFSC code :- </span> IOBA0000747
+                            </p>
+                            <p class="leading-relaxed pb-3 text-xl mb-0 text-custom-blue">
+                                <span class="capitalize text-blue-900">Google Pay :- </span> 7092300252
+                            </p>
+                            <p class="leading-relaxed pb-3 text-xl mb-0 text-custom-blue">
+                                <span class="capitalize text-blue-900">Phone Pay :- </span> 7092300252
+                            </p>
+                        </div>                        
+                    </div>
+                    <div class="col-5">
+                        <div class="bg-gray-200 rounded-lg px-10 py-4">
+                            <div class="flex-grow">
+                                <p class="leading-relaxed pb-3 mb-0 text-xl text-custom-blue">
+                                    <span class="capitalize text-blue-900">name :- </span>Muthuganesa pandian C
+                                </p>
+                                <p class="leading-relaxed pb-3 mb-0 text-xl text-custom-blue">
+                                    <span class="capitalize text-blue-900">bank name :- </span> City union bank
+                                </p>
+                                <p class="leading-relaxed pb-3 mb-0 text-xl text-custom-blue">
+                                    <span class="capitalize text-blue-900">acc no :- </span> 500101012011879
+                                </p>
+                                <p class="leading-relaxed pb-3 mb-0 text-xl text-custom-blue">
+                                    <span class="capitalize text-blue-900">bank branch :- </span> SATTUR
+                                </p>
+                                <p class="uppercase leading-relaxed pb-3 mb-0 text-xl text-custom-blue">
+                                    <span class="capitalize text-blue-900">IFSC code :- </span> CIUB0000162
+                                </p>
+                                <p class="leading-relaxed pb-3 mb-0 text-xl text-custom-blue">
+                                    <span class="capitalize text-blue-900">Google Pay :- </span> 7092300252
+                                </p>
+                                <p class="leading-relaxed pb-1 mb-0 text-xl text-custom-blue">
+                                    <span class="capitalize text-blue-900">Phone Pay :- </span> 7092300252
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <h1 class="text-lg lg:text-xl font-bold text-custom-blue">Payment Option</h1>
+                    <p class="mb-4 leading-relaxed lg:text-lg text-base w-full mt-2 font-bold-400">We will call you once your order is placed.
+                        You can choose your payment option we accept GOOGLE PAY, PHONE PAY, ACCOUNT TRANSFER.</p>
+
+                        <h1 class="text-lg lg:text-xl font-bold text-custom-blue">Delivery</h1>
+                        <p class="mb-4 leading-relaxed lg:text-lg text-base w-full mt-2 font-bold-400">Pick your order from nearest transport office. All over TAMILNADU, PONDICHERRY, ANDRA PRADESH, 
+                            KARNATAKA, and KERALA</p>
+                        <p>
+                            <span>
+                                <strong>Note :</strong>
+                                Delivery Charges Extra. CASH ON DELIVERY NOT AVAILABLE.
+                            </span>
+                        </p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <app-footer></app-footer>
+</div>

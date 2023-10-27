@@ -1,0 +1,149 @@
+.smallborder1 {
+    background-color: #526D82 !important;
+    width: 50px;
+    height: 4px;
+    /* margin-left: calc(0% - 0px); */
+}
+.text-red-600 {
+    color: #e53e3e;
+    color: rgba(229, 62, 62, 1);
+    font-family: League Spartan,sans-serif;
+}
+.leading-relaxed {
+    line-height: 30px;
+    color: rgb(113,128,150);
+    font-size: 14px;;
+    font-weight: 500;
+}
+.text-red-900 {
+    --text-opacity: 1;
+    color: #742a2a;
+    color: rgba(116, 42, 42, var(--text-opacity));
+}
+.bg-red-800 {
+    --bg-opacity: 1;
+    background-color: #9b2c2c;
+    background-color: rgba(155, 44, 44, var(--bg-opacity));
+    text-decoration: none;
+}
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.bg-4 {
+    background-image: url('../../assets/images/bg-4.jpg');
+    /* opacity: 0.75; */
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    width: 100%;
+    padding-top: 70px;
+}
+.text-yellow-200 {
+    --text-opacity: 1;
+    color: #fefcbf;
+    color: rgba(254, 252, 191, var(--text-opacity));
+    font-size: 1.5rem;
+    text-align: center;
+}
+.btn-about {
+    margin-top: 2.5rem;
+    --text-opacity: 1;
+    color: rgba(255, 255, 255, var(--text-opacity));
+    --bg-opacity: 1;
+    background-color: #2b6cb0;
+    background-color: rgba(43, 108, 176, var(--bg-opacity));
+    border-radius: 0.25rem;
+    font-weight: 700;
+    color: #FFF;
+    text-decoration: none;
+    border: none;
+}
+.btn-about a {
+    color: #FFF;
+    text-decoration: none;
+}
+.smallborder {
+    background-color: #526D82 !important;
+    width: 50px;
+    height: 4px;
+    /* margin-left: calc(48% - 0px); */
+}
+.text-gray-600 {
+    --text-opacity: 1;
+    color: #718096;
+    color: rgba(113, 128, 150, var(--text-opacity));
+    font-size: 15px;
+    font-weight: 500;
+
+}
+.float-left {
+    float: left;
+}
+
+.img-fluid {
+    width: 65%;
+    margin: 10px;
+}
+
+.text-red-600 {
+    --text-opacity: 1;
+    color: #e53e3e;
+    color: rgba(229, 62, 62, var(--text-opacity));
+}
+.font-semibold {
+    font-weight: 600;
+}
+.text-center {
+    text-align: center;
+}
+.lg\:text-lg {
+    font-size: 1.125rem;
+}
+.d-none { display: none;}
+#logo{
+    color: #D9251A;
+    font-weight: bold;
+}
+.ext-custom-blue {
+    color: #123E84;
+    font-weight: bold;
+}
+.text-3xl {
+    font-size: 1.875rem;
+}
+.text-2xl {
+    font-size: 1.5rem;
+}
+.font-bold {
+    font-weight: 700;
+}
+.bg-gray-100 {
+    --bg-opacity: 1;
+    background-color: #f7fafc;
+    background-color: rgba(247, 250, 252, var(--bg-opacity));
+}
+.order-text {
+    font-size: 16px !important;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(113, 128, 150);
+    font-weight: bold;
+}
+.our-products {
+    font-family: "Signika Negative", sans-serif;
+    color: rgb(70, 115, 204);
+    font-weight: bold;
+    font-size: 24px;
+}
+.smallborder {
+    background-color: #526D82 !important;
+    width: 50px;
+    height: 4px;
+    /* margin-left: calc(48% - 0px); */
+}

@@ -1,0 +1,48 @@
+<section class="pt-10 text-white bg-gray-900">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                    <h4 class="text-center">JegaJothi Crackers</h4>
+                    <p class="text-gray-400 mt-5 text-justify">Since 2017, 
+                        JegaJothi Crackers is one of the leading crackers shop at Sivakasi. We offer all kind of crackers and Gift boxes.
+                    </p>
+            </div>
+            <div class="col-lg-4">
+                <h4 class="text-center">Contact</h4>
+                <span class="flex px-2 mt-5">
+                    <img src="../../assets/images/address-50.png" alt="image" class="h-6 w-8 text-gray-400">
+                    <p class="no-underline text-lg text-gray-400 rounded px-4 ml-0 pb-1">1/406, SIVAKASI -VEMBAKOTAI MAIN ROAD, 
+                        Opp to EB OFFICE,VEMBAKOTTAI.</p>
+                </span>
+                <span class="flex px-2">
+                    <img src="../../assets/images/whatsapp-50.png" alt="image" class="h-6 w-6 text-gray-400">
+                    <p class="no-underline text-lg text-gray-400 rounded px-4 ml-0 pb-2">709 23 00 252</p>
+                </span>
+                <span class="flex px-2">
+                    <img src="../../assets/images/phone-50.png" alt="image" class="h-6 w-6 text-gray-400">
+                    <p class="no-underline text-lg text-gray-400 rounded px-4 ml-0 pb-2">709 23 00 252</p>
+                </span>
+                <span class="flex px-2"><img src="../../assets/images/email-50.png" alt="image" class="h-6 w-6 text-gray-400">
+                    <p class="no-underline text-lg text-gray-400 rounded px-4 ml-0 pb-1">jjcrackersworld@gmail.com</p></span>
+            </div>
+            <div class="col-lg-3">
+                <h4 class="text-center">Quick Links</h4>
+                <div class=" mt-5 list">
+                        <ul>
+                            <li *ngFor="let nav of menus">
+                                <a routerLink="{{nav.path}}" routerLinkActive="active">{{nav.menuName}}</a>
+                              </li>
+                                <!-- <li><a routerLink=" ">Home</a></li>
+                                <li><a routerLink="about-us">About Us</a></li>
+                                <li><a routerLink=" ">Order Now</a></li>
+                                <li><a routerLink=" ">Safety Tips</a></li>
+                                <li><a routerLink=" ">Contact Us</a></li> -->
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center text-gray-500 border-t border-gray-500 w-full">
+        <p class="text-sm text-white sm:ml-4 sm:border-gray-200 p-4 mb-0">Copyright© 2023, Jegajothi Crackers. All rights reserved </p>
+    </div>
+</section>
